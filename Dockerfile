@@ -14,6 +14,7 @@ RUN apt-get update -qq && apt-get install -y default-libmysqlclient-dev
 
 #Cache bundle install
 WORKDIR /tmp
+RUN gem install rails
 ADD ./Gemfile Gemfile
 ADD ./Gemfile.lock Gemfile.lock
 RUN bundle install
