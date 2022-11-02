@@ -32,8 +32,8 @@ RSpec.describe "/patients", type: :request do
   let(:invalid_attributes) {
     {
       name: 'Felipe',
-      birthdate: '12/12/1980',
       cpf: nil,
+      birthdate: '12/12/1980',
       address_street: 'Rua Um, 321',
       address_neighborhood: 'Bairro Nobre',
       address_city: 'Poços de Caldas',
