@@ -1,0 +1,15 @@
+pt-BR:
+  activerecord:
+    models:
+      patient:
+        one: Paciente
+        more: Pacientes
+    attributes:
+      patient:
+        name: Nome
+        cpf: CPF
+        birthdate: Data de nascimento
+        address_street: Endereço
+        address_neighborhood: Bairro
+        address_city: Cidade
+        address_state: Estado
