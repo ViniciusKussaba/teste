@@ -46,7 +46,14 @@
     <%= form.text_field :address_state, class: "form-control" %>
   </div>
 
-  <div class="col-md-4 mb-3">
-    <%= form.submit "Salvar", class: "btn btn-primary" %>
+  <div class="d-flex flex-row gap-3 mt-3">
+    <%= link_to patients_path, class: "btn btn-primary" do %>
+      <%= fa_icon "angle-left" %>
+      Voltar
+    <% end %>
+    <%= button_tag type: "submit", class: "btn btn-success" do %>
+      <%= fa_icon "save" %>
+      Salvar
+    <% end %>
   </div>
 <% end %>
