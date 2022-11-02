@@ -13,3 +13,22 @@ pt-BR:
         address_neighborhood: Bairro
         address_city: Cidade
         address_state: Estado
+    errors:
+      models:
+        patient:
+          attributes:
+            name:
+              blank: não pode ficar vazio
+            cpf:
+              blank: não pode ficar vazio
+              taken: já foi utilizado por outro paciente
+            birthdate:
+              blank: não pode ficar vazio
+            address_street:
+              blank: não pode ficar vazio
+            address_neighborhood:
+              blank: não pode ficar vazio
+            address_city:
+              blank: não pode ficar vazio
+            address_state:
+              blank: não pode ficar vazio
