@@ -5,6 +5,7 @@ RSpec.describe "patients/edit", type: :view do
     Patient.create!(
       name: "MyString",
       cpf: "MyString",
+      birthdate: Date.today,
       address_street: "MyString",
       address_neighborhood: "MyString",
       address_city: "MyString",
