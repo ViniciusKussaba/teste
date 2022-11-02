@@ -14,4 +14,11 @@
 #  updated_at           :datetime         not null
 #
 class Patient < ApplicationRecord
+  validates :name, presence: true
+  validates :cpf, presence: true, uniqueness: { case_sensitive: false }
+  validates :birthdate, presence: true
+  validates :address_city, presence: true
+  validates :address_neighborhood, presence: true
+  validates :address_state, presence: true
+  validates :address_street, presence: true
 end
