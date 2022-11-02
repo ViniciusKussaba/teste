@@ -1,14 +1,43 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Patients</h1>
-
-<div id="patients">
-  <% @patients.each do |patient| %>
-    <%= render patient %>
-    <p>
-      <%= link_to "Show this patient", patient %>
-    </p>
-  <% end %>
+<div class="row">
+  <div class="col-10">
+    <h1>Pacientes</h1>
+  </div>
+  <div class="col-2 text-end">
+    <%= link_to "Novo paciente", new_patient_path, class: "btn btn-success" %>
+  </div>
 </div>
 
-<%= link_to "New patient", new_patient_path %>
+<div id="patients" class="m-x-2">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Data de nascimento</th>
+        <th>Endereço</th>
+        <th>Bairro</th>
+        <th>Cidade</th>
+        <th>Estado</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @patients.each do |patient| %>
+        <tr>
+          <td><%= patient.id %></td>
+          <td><%= patient.name %></td>
+          <td><%= patient.cpf %></td>
+          <td><%= patient.birthdate %></td>
+          <td><%= patient.address_street %></td>
+          <td><%= patient.address_neighborhood %></td>
+          <td><%= patient.address_city %></td>
+          <td><%= patient.address_state %></td>
+          <td><%= link_to "Mostrar paciente", patient %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
