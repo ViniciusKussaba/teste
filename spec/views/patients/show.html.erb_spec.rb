@@ -5,6 +5,7 @@ RSpec.describe "patients/show", type: :view do
     assign(:patient, Patient.create!(
       name: "Name",
       cpf: "Cpf",
+      birthdate: Date.today,
       address_street: "Address Street",
       address_neighborhood: "Address Neighborhood",
       address_city: "Address City",
