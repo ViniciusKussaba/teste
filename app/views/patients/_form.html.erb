@@ -1,7 +1,7 @@
 <%= form_with(model: patient) do |form| %>
   <% if patient.errors.any? %>
     <div style="color: red">
-      <h2><%= pluralize(patient.errors.count, "error") %> prohibited this patient from being saved:</h2>
+      <h2><%= pluralize(patient.errors.count, "erros") %> não permitiram que o paciente fosse criado:</h2>
 
       <ul>
         <% patient.errors.each do |error| %>
@@ -11,42 +11,42 @@
     </div>
   <% end %>
 
-  <div>
-    <%= form.label :name, style: "display: block" %>
-    <%= form.text_field :name %>
+  <div class="col-md-4 mb-3">
+    <%= form.label :name, class: "form-label" %>
+    <%= form.text_field :name, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :cpf, style: "display: block" %>
-    <%= form.text_field :cpf %>
+  <div class="col-md-4 mb-3">
+    <%= form.label :cpf, class: "form-label" %>
+    <%= form.text_field :cpf, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :birthdate, style: "display: block" %>
-    <%= form.date_field :birthdate %>
+  <div class="col-md-4 mb-3">
+    <%= form.label :birthdate, class: "form-label" %>
+    <%= form.date_field :birthdate, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :address_street, style: "display: block" %>
-    <%= form.text_field :address_street %>
+  <div class="col-md-4 mb-3">
+    <%= form.label :address_street, class: "form-label" %>
+    <%= form.text_field :address_street, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :address_neighborhood, style: "display: block" %>
-    <%= form.text_field :address_neighborhood %>
+  <div class="col-md-4 mb-3">
+    <%= form.label :address_neighborhood, class: "form-label" %>
+    <%= form.text_field :address_neighborhood, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :address_city, style: "display: block" %>
-    <%= form.text_field :address_city %>
+  <div class="col-md-4 mb-3">
+    <%= form.label :address_city, class: "form-label" %>
+    <%= form.text_field :address_city, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.label :address_state, style: "display: block" %>
-    <%= form.text_field :address_state %>
+  <div class="col-md-4 mb-3">
+    <%= form.label :address_state, class: "form-label" %>
+    <%= form.text_field :address_state, class: "form-control" %>
   </div>
 
-  <div>
-    <%= form.submit %>
+  <div class="col-md-4 mb-3">
+    <%= form.submit "Salvar", class: "btn btn-primary" %>
   </div>
 <% end %>
