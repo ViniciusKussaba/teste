@@ -19,6 +19,8 @@ app:
     RAILS_ENV: development
   ports:
     - '3000:3000'
+  volumes:
+    - ./bundle_cache:/bundle:rw,delegated
   volumes_from:
     - appdata
   links:
