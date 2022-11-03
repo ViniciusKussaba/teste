@@ -40,13 +40,13 @@
           <td><%= patient.address_state %></td>
           <td>
             <div class="d-flex flex-row gap-2">
-              <%= link_to patient_path(patient), class: "text-decoration-none text-primary" do %>
+              <%= link_to patient_path(patient), class: "text-decoration-none text-reset" do %>
                 <%= fa_icon "eye" %>
               <% end %>
-              <%= link_to edit_patient_path(patient), class: "text-decoration-none text-warning" do %>
+              <%= link_to edit_patient_path(patient), class: "text-decoration-none text-reset" do %>
                 <%= fa_icon "pencil" %>
               <% end %>
-              <%= link_to patient_path(patient), data: { "turbo_method": :delete, "turbo_confirm": "Deseja mesmo deletar o paciente?" }, class: "text-decoration-none text-danger" do %>
+              <%= link_to patient_path(patient), data: { "turbo_method": :delete, "turbo_confirm": "Deseja mesmo deletar o paciente?" }, class: "text-decoration-none text-reset" do %>
                 <%= fa_icon "trash" %>
               <% end %>
             </div>
