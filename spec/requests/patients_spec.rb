@@ -189,7 +189,7 @@ RSpec.describe "/patients", type: :request do
         expect { post_create }.to change { Patient.count }.by(1)
       end
 
-      it "redireciona para a index" do
+      it "redireciona para a show" do
         is_expected.to redirect_to patient_path(id: Patient.last)
       end
 
