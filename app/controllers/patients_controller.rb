@@ -24,7 +24,7 @@ class PatientsController < ApplicationController
     @patient = Patient.new(patient_params)
 
     if @patient.save
-      redirect_to patient_url(@patient), notice: "Patient was successfully created."
+      redirect_to patient_url(@patient), notice: "Paciente foi criado corretamente."
     else
       render :new, status: :unprocessable_entity
     end
@@ -33,7 +33,7 @@ class PatientsController < ApplicationController
   # PATCH/PUT /patients/1 or /patients/1.json
   def update
     if @patient.update(patient_params)
-      redirect_to patient_url(@patient), notice: "Patient was successfully updated."
+      redirect_to patient_url(@patient), notice: "Paciente foi atualizado com sucesso."
     else
       render :edit, status: :unprocessable_entity
     end
@@ -43,7 +43,7 @@ class PatientsController < ApplicationController
   def destroy
     @patient.destroy
 
-    redirect_to patients_url, notice: "Patient was successfully destroyed."
+    redirect_to patients_url, notice: "Paciente foi excluído com sucesso."
   end
 
   private
