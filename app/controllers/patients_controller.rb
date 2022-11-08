@@ -1,6 +1,10 @@
 class PatientsController < ApplicationController
   before_action :set_patient, only: %i[ show edit update destroy ]
 
+  rescue_from ActiveRecord::RecordNotFound do
+    redirect_to patients_path, alert: "Paciente não encontrado."
+  end
+
   # GET /patients or /patients.json
   def index
     @patients = Patient.all
