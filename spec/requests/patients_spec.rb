@@ -102,6 +102,12 @@ RSpec.describe "/patients", type: :request do
 
         expect(response).to have_http_status :redirect
       end
+
+      it "retorna mensagem de erro" do
+        get_show
+
+        expect(flash[:alert]).to eq("Paciente não encontrado.")
+      end
     end
   end
 
@@ -164,6 +170,12 @@ RSpec.describe "/patients", type: :request do
 
         expect(response).to have_http_status :redirect
       end
+
+      it "retorna mensagem de erro" do
+        get_edit
+
+        expect(flash[:alert]).to eq("Paciente não encontrado.")
+      end
     end
   end
 
@@ -185,6 +197,12 @@ RSpec.describe "/patients", type: :request do
         post_create
 
         expect(response).to have_http_status :redirect
+      end
+
+      it "retorna mensagem de sucesso" do
+        post_create
+
+        expect(flash[:notice]).to eq("Paciente foi criado com sucesso.")
       end
     end
 
@@ -241,6 +259,12 @@ RSpec.describe "/patients", type: :request do
 
           expect(response).to have_http_status :redirect
         end
+
+        it "retorna mensagem de sucesso" do
+          patch_update
+
+          expect(flash[:notice]).to eq("Paciente foi atualizado com sucesso.")
+        end
       end
 
       context "com parâmetros INválidos" do
@@ -283,6 +307,12 @@ RSpec.describe "/patients", type: :request do
 
         expect(response).to have_http_status :redirect
       end
+
+      it "retorna mensagem de erro" do
+        patch_update
+
+        expect(flash[:alert]).to eq("Paciente não encontrado.")
+      end
     end
   end
 
@@ -305,6 +335,12 @@ RSpec.describe "/patients", type: :request do
 
         expect(response).to have_http_status :redirect
       end
+
+      it "retorna mensagem de sucesso" do
+        delete_destroy
+
+        expect(flash[:notice]).to eq("Paciente foi excluído com sucesso.")
+      end
     end
 
     context "quando NÃO existe o paciente" do
@@ -322,6 +358,12 @@ RSpec.describe "/patients", type: :request do
         delete_destroy
 
         expect(response).to have_http_status :redirect
+      end
+
+      it "retorna mensagem de erro" do
+        delete_destroy
+
+        expect(flash[:alert]).to eq("Paciente não encontrado.")
       end
     end
   end
