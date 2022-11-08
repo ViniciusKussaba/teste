@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe "/patients", type: :request do
-  let(:valid_attributes) {
+  let(:valid_attributes) do
     {
       name: 'Felipe',
       cpf: '123.456.789-98',
@@ -11,9 +11,9 @@ RSpec.describe "/patients", type: :request do
       address_city: 'Poços de Caldas',
       address_state: 'MG'
     }
-  }
+  end
 
-  let(:other_valid_attributes) {
+  let(:other_valid_attributes) do
     {
       name: 'Wallison',
       cpf: '987.654.321-12',
@@ -23,9 +23,9 @@ RSpec.describe "/patients", type: :request do
       address_city: 'Poços de Caldas',
       address_state: 'MG'
     }
-  }
+  end
 
-  let(:invalid_attributes) {
+  let(:invalid_attributes) do
     {
       name: 'Felipe',
       cpf: nil,
@@ -35,7 +35,7 @@ RSpec.describe "/patients", type: :request do
       address_city: 'Poços de Caldas',
       address_state: 'MG'
     }
-  }
+  end
 
   describe "GET /index" do
     subject(:get_index) { get patients_path }
