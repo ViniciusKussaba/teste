@@ -24,5 +24,12 @@ RUN mkdir -p $APP_ROOT
 WORKDIR $APP_ROOT
 COPY . $APP_ROOT
 
-EXPOSE  3000
-CMD rm -f tmp/pids/server.pid && bundle check || bundle install --jobs 20 --retry 5 && rails s -b '0.0.0.0'
+ENV BUNDLE_PATH=/bundle \
+    BUNDLE_BIN=/bundle/bin \
+    BUNDLE_JOBS=2 \
+    GEM_HOME=/bundle \
+    BUNDLE_GEMFILE=/workspace/Gemfile
+
+ENV PATH="${BUNDLE_BIN}:${PATH}"
+
+ENTRYPOINT ["./docker_entrypoint.sh"]
